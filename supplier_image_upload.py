@@ -49,9 +49,13 @@ def upload_all_from_the_sourse_directory(sourse_directory,
                                                  file_extension)
     upload_all_from_the_list_to_url(full_path_list, server_url)
 
-if __name__ == '__main__':
+def main():
     server_url = "http://localhost/upload/"
     sourse_directory = "./supplier-data/images"
     file_extension = "*.jpeg"
     upload_all_from_the_sourse_directory(sourse_directory,
                                          file_extension, server_url)
+
+
+if __name__ == '__main__':
+    main()

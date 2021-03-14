@@ -42,9 +42,7 @@ def convert_img(sourse_directory, target_directory, source_img_extension,
         convert_save_img(img_name, sourse_directory,
                          target_directory, img_format, img_size, img_extension)
 
-
-
-if __name__ == '__main__':
+def main():
     sourse_directory = "./supplier-data/images"
     target_directory = "./supplier-data/images"
     source_img_extension = "*.tiff"
@@ -55,3 +53,6 @@ if __name__ == '__main__':
     convert_img(sourse_directory,target_directory, source_img_extension,
                 img_format, img_size, img_extension)
     print("--- %s seconds ---" % (time.time()-start_time))
+
+if __name__ == '__main__':
+    main()
