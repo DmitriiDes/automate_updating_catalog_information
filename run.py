@@ -126,7 +126,12 @@ def main():
     sourse_description_extension = "*.txt"
     sourse_img_directory = "./supplier-data/images"
     sourse_img_extension = "*.jpeg"
-
+    server_url = "http://[linux-instance-external-IP]/fruits"
+    upload_all_descriptions_from_a_folder(sourse_description_directory,
+                                          sourse_description_extension,
+                                          sourse_img_directory,
+                                          sourse_img_extension,
+                                          server_url)
 
 
 if __name__ == '__main__':
