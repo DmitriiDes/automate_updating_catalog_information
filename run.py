@@ -92,9 +92,9 @@ def match_img_to_description(
     return d_name == i_name
 
 def upload_all_descriptions_from_a_folder(
-        sourse_description_directory,
-        sourse_description_extension,
-        sourse_img_directory,
+        source_description_directory,
+        source_description_extension,
+        source_img_directory,
         source_img_extension,
         server_url):
     """
@@ -103,11 +103,11 @@ def upload_all_descriptions_from_a_folder(
     uploads descriptions to the server
     """
     description_path_list = get_full_path_list_of_files(
-                          sourse_description_directory,
-                          sourse_description_extension)
+                          source_description_directory,
+                          source_description_extension)
     img_path_list = get_full_path_list_of_files(
-                  sourse_img_directory,
-                  sourse_img_extension)
+                  source_img_directory,
+                  source_img_extension)
     for description_path in description_path_list:
         d_name = get_file_name_from_full_path(description_path)
         i = 0
@@ -122,15 +122,15 @@ def upload_all_descriptions_from_a_folder(
             upload_description_to_the_server(d_json, server_url)
 
 def main():
-    sourse_description_directory = "./supplier-data/descriptions"
-    sourse_description_extension = "*.txt"
-    sourse_img_directory = "./supplier-data/images"
-    sourse_img_extension = "*.jpeg"
-    server_url = "http://[linux-instance-external-IP]/fruits"
-    upload_all_descriptions_from_a_folder(sourse_description_directory,
-                                          sourse_description_extension,
-                                          sourse_img_directory,
-                                          sourse_img_extension,
+    source_description_directory = "./supplier-data/descriptions"
+    source_description_extension = "*.txt"
+    source_img_directory = "./supplier-data/images"
+    source_img_extension = "*.jpeg"
+    server_url = "http://[linux-instance-external-IP]/fruits/"
+    upload_all_descriptions_from_a_folder(source_description_directory,
+                                          source_description_extension,
+                                          source_img_directory,
+                                          source_img_extension,
                                           server_url)
 
 

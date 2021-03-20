@@ -5,12 +5,12 @@ import reports
 from supplier_image_upload import get_full_path_list_of_files
 from run import convert_txt_description_into_lines
 
-def get_additional_info(sourse_directory, file_extension):
+def get_additional_info(source_directory, file_extension):
     """
     Creates multiline string of name: weight: based on reviews in the folder
     """
     additional_info = ""
-    description_path_list = get_full_path_list_of_files(sourse_directory, file_extension)
+    description_path_list = get_full_path_list_of_files(source_directory, file_extension)
     for description_path in description_path_list:
         product_description_lines = convert_txt_description_into_lines(
                                   description_path)
@@ -18,12 +18,12 @@ def get_additional_info(sourse_directory, file_extension):
         additional_info += "\n\n"
 
 def main():
-    sourse_description_directory = "./supplier-data/descriptions"
-    sourse_description_extension = "*.txt"
+    source_description_directory = "./supplier-data/descriptions"
+    source_description_extension = "*.txt"
     generated_report_path = "/tmp/"
     report_name = "processed.pdf"
     title = "Processed Update on {}".format(datetime.date.today())
-    additional_info = get_additional_info(sourse_description_directory, sourse_description_extension)
+    additional_info = get_additional_info(source_description_directory, source_description_extension)
     report.generate_report(generated_report_path, report_name, title, additional_info)
 
 if __name__ == '__main__':
