@@ -126,7 +126,7 @@ def main():
     source_description_extension = "*.txt"
     source_img_directory = "./supplier-data/images"
     source_img_extension = "*.jpeg"
-    server_url = "http://[linux-instance-external-IP]/fruits/"
+    server_url = "http://localhost/fruits/"
     upload_all_descriptions_from_a_folder(source_description_directory,
                                           source_description_extension,
                                           source_img_directory,
