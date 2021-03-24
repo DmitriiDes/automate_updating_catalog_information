@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from email.message import EmailMesage
+from email.message import EmailMessage
 import os.path
 import mimetypes
 import smtplib
@@ -30,8 +30,5 @@ def send_email(sender, message):
     """
     Log in into mail server and send the message
     """
-    mail_server = smtplib.SMTP_SSL(sender)
-    mail_pass = getpass.getpass("Email Password: ")
-    mail_server.login(sender, mail_pass)
-    mail_server.send_message(message)
-    mail_server.quit()
+    with smtplib.SMTP("localhost") as mail_server:
+        mail_server.send_message(message)
