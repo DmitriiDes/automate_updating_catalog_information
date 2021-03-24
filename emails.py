@@ -15,7 +15,7 @@ def generate_email(sender, recipient, subject = "", body = "", attachement_path 
     message["To"] = recipient
     message["Subject"] = subject
     message.set_content(body)
-    if attachement_path != "":
+    if not attachement_path:
         attachement_filename = os.path.basename(attachement_path)
         mime_type, _ = mimetypes.guess_type(attachement_path)
         mime_type, mime_subtype = mime_type.split("/", 1)
